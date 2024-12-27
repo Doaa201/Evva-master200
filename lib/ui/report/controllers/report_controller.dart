@@ -173,7 +173,7 @@ class ReportController extends GetxController {
       for (var element in weightDataList) {
         DateTime date = DateTime.parse(element.weightDate!);
         var index =
-            data.indexWhere((element) => element.date.isAtSameMomentAs(date));
+        data.indexWhere((element) => element.date.isAtSameMomentAs(date));
         if (index > 0) {
           data[index].sales = int.parse(element.weightKg!);
         }
@@ -182,7 +182,7 @@ class ReportController extends GetxController {
       for (var element in weightDataList) {
         DateTime date = DateTime.parse(element.weightDate!);
         var index =
-            data.indexWhere((element) => element.date.isAtSameMomentAs(date));
+        data.indexWhere((element) => element.date.isAtSameMomentAs(date));
         if (index > 0) {
           data[index].sales = int.parse(element.weightLb!);
         }
@@ -262,9 +262,9 @@ class ReportController extends GetxController {
     update([Constant.idTotal]);
   }
 
-   getHistoryWeekWise() async {
-     isAvailableHistory.clear();
-     completedCount = 0;
+  getHistoryWeekWise() async {
+    isAvailableHistory.clear();
+    completedCount = 0;
     Utils.getDaysDateForHistoryOfWeek().forEach((element) async {
       bool? isAvailable = await DBHelper.dbHelper.isHistoryAvailableDateWise(element.toString());
       if (isAvailableHistory.length < 7) {

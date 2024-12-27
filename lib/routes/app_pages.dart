@@ -22,16 +22,12 @@ import '../ui/create_new_password/bindings/create_new_password_binding.dart';
 import '../ui/create_new_password/views/create_new_password_screen.dart';
 import '../ui/days_plan_detail/bindings/days_plan_detail_binding.dart';
 import '../ui/days_plan_detail/views/days_plan_detail_screen.dart';
-import '../ui/edit_plan/bindings/edit_plan_binding.dart';
-import '../ui/edit_plan/views/edit_plan_screen.dart';
 import '../ui/email_verified/bindings/email_verified_binding.dart';
 import '../ui/email_verified/views/email_verified_screen.dart';
 import '../ui/enter_otp/bindings/enter_otp_binding.dart';
 import '../ui/enter_otp/views/enter_otp_screen.dart';
 import '../ui/exercise_list/bindings/exercise_list_binding.dart';
 import '../ui/exercise_list/views/exercise_list_screen.dart';
-import '../ui/history/bindings/history_binding.dart';
-import '../ui/history/views/history_screen.dart';
 import '../ui/home/bindings/home_binding.dart';
 import '../ui/home/views/home_screen.dart';
 import '../ui/home_detail/bindings/home_detail_binding.dart';
@@ -58,8 +54,6 @@ import '../ui/water_tracker/bindings/water_tracker_binding.dart';
 import '../ui/water_tracker/views/water_tracker_screen.dart';
 import '../ui/well_done/bindings/well_done_binding.dart';
 import '../ui/well_done/views/well_done_screen.dart';
-import '../ui/whats_your_goal/bindings/whats_your_goal_binding.dart';
-import '../ui/whats_your_goal/views/whats_your_goal_screen.dart';
 import '../ui/your_plan/bindings/your_plan_binding.dart';
 import '../ui/your_plan/views/your_plan_screen.dart';
 import '../utils/color.dart';
@@ -124,11 +118,7 @@ class AppPages {
       name: AppRoutes.plan,
       page: () => PlanScreen(),
       binding: PlanBinding(),
-    ),
-    GetPage(
-      name: AppRoutes.whatsYourGoal,
-      page: () => WhatsYourGoalScreen(),
-      binding: WhatsYourGoalBinding(),
+
     ),
     GetPage(
       name: AppRoutes.me,
@@ -178,17 +168,9 @@ class AppPages {
       page: () => ExerciseListScreen(),
       binding: ExerciseListBinding(),
     ),
-    GetPage(
-      name: AppRoutes.editPlan,
-      page: () => EditPlanScreen(),
-      binding: EditPlanBinding(),
-    ),
 
-    GetPage(
-      name: AppRoutes.history,
-      page: () => HistoryScreen(),
-      binding: HistoryBinding(),
-    ),
+
+
     GetPage(
       name: AppRoutes.about,
       page: () => const AboutScreen(),
