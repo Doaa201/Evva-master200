@@ -23,7 +23,7 @@ class AboutScreen extends StatelessWidget {
             children: [
               SizedBox(height: AppSizes.height_2_5),
               Text(
-                "txtInstruction".tr.toUpperCase(),
+                "ABOUT US".tr.toUpperCase(),
                 textAlign: TextAlign.left,
                 style: TextStyle(
                   color: AppColor.black,
@@ -33,7 +33,7 @@ class AboutScreen extends StatelessWidget {
               ),
               SizedBox(height: AppSizes.height_2),
               Text(
-                "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+                "Welcome to our app!We are here to help you achieve your health and fitness goals in an easy and enjoyable way. Our app is specifically designed to meet the needs of individuals looking to improve their lifestyle, whether it’s through weight loss or maintaining a healthy balance.",
                 textAlign: TextAlign.left,
                 style: TextStyle(
                   color: AppColor.txtColor666,
@@ -42,34 +42,43 @@ class AboutScreen extends StatelessWidget {
                   height: AppSizes.height_0_2,
                 ),
               ),
-              SizedBox(height: AppSizes.height_5),
+              SizedBox(height: AppSizes.height_2),
+              Text('Features of the App:\n',
+                style: TextStyle(fontSize: AppFontSize.size_12_5,
+                fontWeight: FontWeight.w500),
+
+              ),
               RichText(
                 text: TextSpan(
                   text:
-                  'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing ',
+                  '1. Weight and Height Calculation: \n The app allows you to enter your weight and height to determine your ideal weight. You will receive personalized tips to help you reach your goal.\n\n2. Water Intake Tracking:\n We understand that drinking enough water is a crucial part of a healthy lifestyle. Therefore, we have developed a reminder feature to help you stay hydrated throughout the day.\n\n 3. Customized Fitness Activities:\n Enjoy a variety of fitness activities that include easy-to-understand animations. These activities are specifically designed for women, making exercise fun and effective.\n\n 4. Cup Tracking:You can track the number of cups you drink daily, helping you monitor your water intake more effectively.\n ',
                   style: TextStyle(
                     color: AppColor.txtColor666,
-                    fontSize: AppFontSize.size_10_5,
+                    fontSize: AppFontSize.size_12,
                     fontWeight: FontWeight.w400,
                   ),
-                  children: const <TextSpan>[
-                    TextSpan(
-                      text: 'Wikipedia',
-                      style: TextStyle(
-                        decoration: TextDecoration.underline,
-                        fontWeight: FontWeight.w500,
-                        color: AppColor.hyperLinkText,
-                      ),
-                    ),
-                    TextSpan(
-                      text:
-                      ' Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-                    ),
-                  ],
                 ),
               ),
-              SizedBox(height: AppSizes.height_5),
+              SizedBox(height: AppSizes.height_0_1),
+              Text('Our Vision:',
+                style: TextStyle(fontSize: AppFontSize.size_12_5,
+                    fontWeight: FontWeight.w500),
 
+              ),
+              RichText(text: TextSpan(
+                text: 'We aim to be your perfect companion on your journey to health and fitness. We believe that everyone has the ability to achieve their goals, and with our app, you will be on the right path to do so. \n Our goal is to provide support and encouragement at every step.We are excited to help you improve your health and life.\n ',
+                style: TextStyle(
+                  color: AppColor.txtColor666,
+                  fontSize: AppFontSize.size_12,
+                  fontWeight: FontWeight.w400,
+                ),
+
+              ),),
+              Text("Join us today and start !",
+              style: TextStyle(fontWeight: FontWeight.w500,fontSize:AppFontSize.size_12
+              ),),
+
+              SizedBox(height: AppSizes.height_5),
               // زر BACK في آخر الصفحة
               Center(
                 child: TextButton(
