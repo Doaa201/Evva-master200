@@ -159,6 +159,7 @@ class Constant {
   static const idHistoryList = "idHistoryList";
   static const idCalender = "idCalender";
   static const idTotal = "idTotal";
+  static const idReportWeekHistory = "idReportWeekHistory";
   static const idPlanRecentHistory = "idPlanRecentHistory";
   static const idRecentScreenHistory = "idRecentScreenHistory";
   static const idExerciseButtons = "idExerciseButtons";

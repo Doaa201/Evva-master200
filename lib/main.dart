@@ -242,8 +242,8 @@ class _MyAppState extends State<MyApp> {
       getPages: AppPages.list,
       defaultTransition: Transition.fade,
       transitionDuration: const Duration(milliseconds: 200),
-      initialRoute:
-          (Utils.isFirstTimeOpenApp()) ? AppRoutes.initial : AppRoutes.home,
+      initialRoute:AppRoutes.home
+          // (Utils.isFirstTimeOpenApp()) ? AppRoutes.initial : AppRoutes.home,
     );
   }
 }

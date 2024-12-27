@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:women_lose_weight_flutter/common/dialog/watch_ad/watch_ad.dart';
 import 'package:women_lose_weight_flutter/database/helper/db_helper.dart';
 import 'package:women_lose_weight_flutter/routes/app_routes.dart';
 import 'package:women_lose_weight_flutter/utils/preference.dart';
@@ -13,6 +14,7 @@ import 'package:women_lose_weight_flutter/utils/utils.dart';
 import '../../../common/bottomsheet/bottom_sheet_ex_detail.dart';
 import '../../../database/custom_classes/custom_classes.dart';
 import '../../../database/table/home_plan_table.dart';
+import '../../../google_ads/ad_helper.dart';
 import '../../../utils/color.dart';
 import '../../../utils/constant.dart';
 import '../../../utils/debug.dart';
@@ -43,7 +45,30 @@ class ExerciseListController extends GetxController
 
   RewardedAd? _rewardedAd;
 
+  void _loadRewardedAd() {
+    if (Debug.googleAd && !Utils.isPurchased()) {
+      RewardedAd.load(
+        adUnitId: AdHelper.rewardedAdUnitId,
+        request: const AdRequest(),
+        rewardedAdLoadCallback: RewardedAdLoadCallback(
+          onAdLoaded: (ad) {
+            ad.fullScreenContentCallback = FullScreenContentCallback(
+              onAdDismissedFullScreenContent: (ad) {
+                ad.dispose();
+                _rewardedAd = null;
+                _loadRewardedAd();
+              },
+            );
 
+            _rewardedAd = ad;
+          },
+          onAdFailedToLoad: (err) {
+            Debug.printLog('Failed to load a rewarded ad: ${err.message}');
+          },
+        ),
+      );
+    }
+  }
 
   onClickUnlockOnce() {
     if (_rewardedAd != null && Debug.googleAd && !Utils.isPurchased()) {
@@ -59,18 +84,18 @@ class ExerciseListController extends GetxController
 
   @override
   void onInit() {
-
-    // Future.delayed(const Duration(milliseconds: 1), () {
-    //   if (!Utils.isPurchased()) {
-    //     showDialog(
-    //       useSafeArea: false,
-    //       context: Get.context!,
-    //       builder: (BuildContext context) {
-    //         return WatchAdDialog();
-    //       },
-    //     );
-    //   }
-    // });
+    _loadRewardedAd();
+    Future.delayed(const Duration(milliseconds: 1), () {
+      if (!Utils.isPurchased()) {
+        showDialog(
+          useSafeArea: false,
+          context: Get.context!,
+          builder: (BuildContext context) {
+            return WatchAdDialog();
+          },
+        );
+      }
+    });
     scrollController = ScrollController();
     scrollController!.addListener(() {
       offset = scrollController!.offset;
@@ -337,7 +362,7 @@ class ExerciseListController extends GetxController
       exerciseList,
       listOfAnimation,
       listOfAnimationController,
-      null,
+      "1",
       workoutPlanData!.planDays == Constant.planDaysYes ? weeklyDaysData : null,
     ])!
         .then((value) => _getDataFromDataBase());

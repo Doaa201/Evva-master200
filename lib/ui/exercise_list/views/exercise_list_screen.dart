@@ -6,6 +6,7 @@ import 'package:women_lose_weight_flutter/database/custom_classes/custom_classes
 import 'package:women_lose_weight_flutter/routes/app_routes.dart';
 import 'package:women_lose_weight_flutter/ui/exercise_list/controllers/exercise_list_controller.dart';
 
+import '../../../google_ads/custom_ad.dart';
 import '../../../utils/color.dart';
 import '../../../utils/constant.dart';
 import '../../../utils/sizer_utils.dart';
@@ -62,7 +63,7 @@ class ExerciseListScreen extends StatelessWidget {
                   }
                 },
               ),
-              //const BannerAdClass(),
+
             ],
           ),
         ),
@@ -470,7 +471,34 @@ class ExerciseListScreen extends StatelessWidget {
           ],
         ),
       ),
-
+      child: TextButton(
+        onPressed: () {
+          _exerciseListController.onGoButtonClick();
+        },
+        style: ButtonStyle(
+          shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(100.0),
+              side: const BorderSide(
+                color: AppColor.transparent,
+                width: 0.7,
+              ),
+            ),
+          ),
+        ),
+        child: Container(
+          padding: EdgeInsets.symmetric(vertical: AppSizes.height_1),
+          child: Text(
+            "txtGo".tr.toUpperCase(),
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: AppColor.white,
+              fontSize: AppFontSize.size_14,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+        ),
+      ),
     );
   }
 

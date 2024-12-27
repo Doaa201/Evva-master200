@@ -623,6 +623,6 @@ class Utils {
   }
 
   static isPurchased() {
-    return Preference.shared.getBool(Preference.isPurchased) ?? Constant.boolValueFalse;
+    return true;
   }
 }
