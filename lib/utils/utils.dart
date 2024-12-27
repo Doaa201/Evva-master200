@@ -15,7 +15,6 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:women_lose_weight_flutter/database/helper/db_helper.dart';
 import 'package:women_lose_weight_flutter/utils/debug.dart';
 
-import '../common/dialog/multi_selection_days/multiselect_dialog.dart';
 import '../database/table/reminder_table.dart';
 import '../main.dart';
 import '../routes/app_routes.dart';
@@ -208,47 +207,6 @@ class Utils {
     Get.offAllNamed(AppRoutes.home);
   }
 
-  static daysList() {
-    List<MultiSelectDialogItem> daysList = [
-      MultiSelectDialogItem(
-          "1",
-          intl.DateFormat.EEEE(Get.locale!.languageCode)
-              .dateSymbols
-              .WEEKDAYS[1]),
-      MultiSelectDialogItem(
-          "2",
-          intl.DateFormat.EEEE(Get.locale!.languageCode)
-              .dateSymbols
-              .WEEKDAYS[2]),
-      MultiSelectDialogItem(
-          "3",
-          intl.DateFormat.EEEE(Get.locale!.languageCode)
-              .dateSymbols
-              .WEEKDAYS[3]),
-      MultiSelectDialogItem(
-          "4",
-          intl.DateFormat.EEEE(Get.locale!.languageCode)
-              .dateSymbols
-              .WEEKDAYS[4]),
-      MultiSelectDialogItem(
-          "5",
-          intl.DateFormat.EEEE(Get.locale!.languageCode)
-              .dateSymbols
-              .WEEKDAYS[5]),
-      MultiSelectDialogItem(
-          "6",
-          intl.DateFormat.EEEE(Get.locale!.languageCode)
-              .dateSymbols
-              .WEEKDAYS[6]),
-      MultiSelectDialogItem(
-          "7",
-          intl.DateFormat.EEEE(Get.locale!.languageCode)
-              .dateSymbols
-              .WEEKDAYS[0]),
-    ];
-
-    return daysList;
-  }
 
   static Future<void> setNotificationReminder(
       {List<ReminderTable>? reminderList}) async {

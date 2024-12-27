@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
+import 'package:women_lose_weight_flutter/ui/common_questions/bindings/common_questions_binding.dart';
+import 'package:women_lose_weight_flutter/ui/common_questions/views/common_questions_screen.dart';
 import '../ui/about/bindings/about_binding.dart';
 import '../ui/about/views/about_screen.dart';
 import '../ui/bmi/bindings/bmi_binding.dart';
@@ -26,10 +28,6 @@ import '../ui/enter_otp/bindings/enter_otp_binding.dart';
 import '../ui/enter_otp/views/enter_otp_screen.dart';
 import '../ui/exercise_list/bindings/exercise_list_binding.dart';
 import '../ui/exercise_list/views/exercise_list_screen.dart';
-import '../ui/fast_work_out/bindings/fast_work_out_binding.dart';
-import '../ui/fast_work_out/views/fast_work_out_screen.dart';
-import '../ui/fast_work_out_detail/bindings/fast_work_out_detail_binding.dart';
-import '../ui/fast_work_out_detail/views/fast_work_out_detail_screen.dart';
 import '../ui/history/bindings/history_binding.dart';
 import '../ui/history/views/history_screen.dart';
 import '../ui/home/bindings/home_binding.dart';
@@ -44,8 +42,6 @@ import '../ui/plan/bindings/plan_binding.dart';
 import '../ui/plan/views/plan_screen.dart';
 import '../ui/recent/bindings/recent_binding.dart';
 import '../ui/recent/views/recent_screen.dart';
-import '../ui/reminder/bindings/reminder_binding.dart';
-import '../ui/reminder/views/reminder_screen.dart';
 import '../ui/rest_day/bindings/rest_day_binding.dart';
 import '../ui/rest_day/views/rest_day_screen.dart';
 import '../ui/sign_in/bindings/sign_in_binding.dart';
@@ -112,6 +108,12 @@ class AppPages {
       page: () => YourPlanScreen(),
       binding: YourPlanBinding(),
     ),
+
+    GetPage(
+      name: AppRoutes.commonQuestions,
+      page: () => CommonQuestionsScreen(),
+      binding: CommonQuestionsBinding(),
+    ),
     GetPage(
       name: AppRoutes.plan,
       page: () => PlanScreen(),
@@ -142,11 +144,7 @@ class AppPages {
       page: () => const WaterTrackerScreen(),
       binding: WaterTrackerBinding(),
     ),
-    GetPage(
-      name: AppRoutes.fastWorkOut,
-      page: () => FastWorkOutScreen(),
-      binding: FastWorkOutBinding(),
-    ),
+
     GetPage(
       name: AppRoutes.recent,
       page: () => const RecentScreen(),
@@ -157,11 +155,7 @@ class AppPages {
       page: () => HomeDetailScreen(),
       binding: HomeDetailBinding(),
     ),
-    GetPage(
-      name: AppRoutes.reminder,
-      page: () => ReminderScreen(),
-      binding: ReminderBinding(),
-    ),
+
     GetPage(
       name: AppRoutes.myProfile,
       page: () => const MyProfileScreen(),
@@ -172,11 +166,7 @@ class AppPages {
       page: () => DaysPlanDetailScreen(),
       binding: DaysPlanDetailBinding(),
     ),
-    GetPage(
-      name: AppRoutes.fastWorkOutDetail,
-      page: () => FastWorkOutDetailScreen(),
-      binding: FastWorkOutDetailBinding(),
-    ),
+
     GetPage(
       name: AppRoutes.exerciseList,
       page: () => ExerciseListScreen(),
@@ -187,11 +177,7 @@ class AppPages {
       page: () => EditPlanScreen(),
       binding: EditPlanBinding(),
     ),
-    GetPage(
-      name: AppRoutes.restDay,
-      page: () => RestDayScreen(),
-      binding: RestDayBinding(),
-    ),
+
     GetPage(
       name: AppRoutes.history,
       page: () => HistoryScreen(),

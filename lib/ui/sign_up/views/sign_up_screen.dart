@@ -47,7 +47,7 @@ class SignUpScreen extends StatelessWidget {
               const Spacer(),
               InkWell(
                 onTap: () {
-                  Get.offAllNamed(AppRoutes.chooseYourPlan);
+                  Get.offAllNamed(AppRoutes.home);  // الانتقال إلى صفحة Home Screen
                 },
                 child: Text(
                   "txtSkip".tr,

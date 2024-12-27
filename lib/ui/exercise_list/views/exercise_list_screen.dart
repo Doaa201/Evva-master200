@@ -470,34 +470,7 @@ class ExerciseListScreen extends StatelessWidget {
           ],
         ),
       ),
-      child: TextButton(
-        onPressed: () {
-          _exerciseListController.onGoButtonClick();
-        },
-        style: ButtonStyle(
-          shape: WidgetStateProperty.all<RoundedRectangleBorder>(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(100.0),
-              side: const BorderSide(
-                color: AppColor.transparent,
-                width: 0.7,
-              ),
-            ),
-          ),
-        ),
-        child: Container(
-          padding: EdgeInsets.symmetric(vertical: AppSizes.height_1),
-          child: Text(
-            "txtGo".tr.toUpperCase(),
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: AppColor.white,
-              fontSize: AppFontSize.size_14,
-              fontWeight: FontWeight.w700,
-            ),
-          ),
-        ),
-      ),
+
     );
   }
 

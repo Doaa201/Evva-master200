@@ -46,7 +46,7 @@ class SignInScreen extends StatelessWidget {
               const Spacer(),
               InkWell(
                 onTap: () {
-                  Get.offAllNamed(AppRoutes.chooseYourPlan);
+                  Get.offAllNamed(AppRoutes.home);  // الانتقال إلى صفحة Home Screen
                 },
                 child: Text(
                   "txtSkip".tr,
@@ -311,7 +311,7 @@ class SignInScreen extends StatelessWidget {
   _txtCreateAccount() {
     return Container(
       margin:
-          EdgeInsets.only(top: AppSizes.height_5, bottom: AppSizes.height_3_5),
+      EdgeInsets.only(top: AppSizes.height_5, bottom: AppSizes.height_3_5),
       child: RichText(
         text: TextSpan(
           text: "${'txtCreateAccount'.tr}? ",

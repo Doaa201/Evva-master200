@@ -9,6 +9,7 @@ import '../../../utils/sizer_utils.dart';
 import '../../../utils/utils.dart';
 
 class CommonQuestionsScreen extends StatelessWidget {
+
   CommonQuestionsScreen({super.key});
 
   final CommonQuestionsController _commonQuestionsController =

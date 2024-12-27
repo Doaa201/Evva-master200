@@ -155,7 +155,7 @@ class ReportScreen extends StatelessWidget {
 
   _widgetHistory() {
     return GetBuilder<ReportController>(
-        id: Constant.idReportWeekHistory,
+       
         builder: (logic) {
           return Column(
             children: [

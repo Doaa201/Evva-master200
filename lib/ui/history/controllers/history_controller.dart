@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:women_lose_weight_flutter/database/helper/db_helper.dart';
 import 'package:women_lose_weight_flutter/ui/exercise_list/controllers/exercise_list_controller.dart';
-import 'package:women_lose_weight_flutter/ui/fast_work_out_detail/controllers/fast_work_out_detail_controller.dart';
 import 'package:women_lose_weight_flutter/utils/constant.dart';
 
 import '../../../database/custom_classes/custom_classes.dart';
@@ -81,20 +80,7 @@ class HistoryController extends GetxController {
     homePlanTable = await DBHelper.dbHelper
         .getPlanByPlanId(int.parse(arrHistoryDetail.hPlanId.toString()));
 
-    if (arrHistoryDetail.planDetail!.hasSubPlan!) {
-      Get.lazyReplace(() => FastWorkOutDetailController());
-      Get.toNamed(AppRoutes.fastWorkOutDetail);
-    } else if (arrHistoryDetail.planDetail!.planDays == Constant.planDaysYes) {
-      if (isFromReport) {
-        Get.toNamed(AppRoutes.daysPlanDetail);
-      } else {
-        Get.back();
-        Get.back();
-      }
-    } else {
-      Get.lazyReplace(() => ExerciseListController());
-      Get.toNamed(AppRoutes.exerciseList,
-          arguments: [homePlanTable, null, null]);
+
     }
   }
-}
+

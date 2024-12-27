@@ -17,9 +17,7 @@ class WhatsYourGoalController extends GetxController {
   _whatsYourGoalListData() {
     whatsYourGoalList = [
       "txtLoseWeightAndKeepFit".tr,
-      "txtButtLiftTone".tr,
-      "txtLoseBellyFat".tr,
-      "txtBuildMuscleStrength".tr
+
     ];
   }
 

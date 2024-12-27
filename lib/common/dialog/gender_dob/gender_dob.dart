@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:women_lose_weight_flutter/ui/report/controllers/report_controller.dart';
 import 'package:women_lose_weight_flutter/utils/preference.dart';
 
 import '../../../utils/color.dart';
@@ -31,8 +30,7 @@ class _GenderDOBDialogState extends State<GenderDOBDialog> {
         child: Center(
           child: Wrap(
             children: [
-              GetBuilder<ReportController>(id: Constant.idGenderDOBDialog, builder: (logic) {
-                return Container(
+                 Container(
                   width: double.infinity,
                   margin: EdgeInsets.symmetric(horizontal: AppSizes.width_5),
                   decoration: BoxDecoration(
@@ -71,7 +69,6 @@ class _GenderDOBDialogState extends State<GenderDOBDialog> {
                                   if (!isMale) {
                                       isMale = true;
                                       isFemale = false;
-                                    logic.update([Constant.idGenderDOBDialog]);
                                   }
                                 },
                                 child: Container(
@@ -109,7 +106,6 @@ class _GenderDOBDialogState extends State<GenderDOBDialog> {
                                   if (!isFemale) {
                                       isFemale = true;
                                       isMale = false;
-                                    logic.update([Constant.idGenderDOBDialog]);
                                   }
                                 },
                                 child: Container(
@@ -179,7 +175,6 @@ class _GenderDOBDialogState extends State<GenderDOBDialog> {
                                   looping: Constant.boolValueTrue,
                                   onSelectedItemChanged: (value) {
                                       dobMonth = value + 1;
-                                    logic.update([Constant.idGenderDOBDialog]);
                                   },
                                   itemExtent: 50.0,
                                   selectionOverlay: Container(
@@ -227,7 +222,7 @@ class _GenderDOBDialogState extends State<GenderDOBDialog> {
                                   looping: Constant.boolValueTrue,
                                   onSelectedItemChanged: (value) {
                                       dobDay = value + 1;
-                                    logic.update([Constant.idGenderDOBDialog]);
+
                                   },
                                   itemExtent: 50.0,
                                   selectionOverlay: Container(
@@ -275,7 +270,7 @@ class _GenderDOBDialogState extends State<GenderDOBDialog> {
                                   looping: Constant.boolValueTrue,
                                   onSelectedItemChanged: (value) {
                                       dobYear = value + 1960;
-                                    logic.update([Constant.idGenderDOBDialog]);
+
                                   },
                                   itemExtent: 50.0,
                                   selectionOverlay: Container(
@@ -382,8 +377,8 @@ class _GenderDOBDialogState extends State<GenderDOBDialog> {
                       )
                     ],
                   ),
-                );
-              }),
+                ),
+
             ],
           ),
         ),

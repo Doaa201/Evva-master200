@@ -274,7 +274,6 @@ class ReportController extends GetxController {
         isAvailableHistory.add(isAvailable);
       }
     });
-    update([Constant.idReportWeekHistory]);
   }
 
   onAddWeightClick(){

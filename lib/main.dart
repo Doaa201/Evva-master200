@@ -31,6 +31,7 @@ import 'utils/constant.dart';
 import 'utils/debug.dart';
 import 'utils/preference.dart';
 
+
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
     FlutterLocalNotificationsPlugin();
 

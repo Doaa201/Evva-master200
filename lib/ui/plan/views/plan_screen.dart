@@ -18,17 +18,18 @@ final PlanController _planController = Get.find<PlanController>();
 
 @override
 Widget build(BuildContext context) {
-return SingleChildScrollView(
-padding: EdgeInsets.symmetric(
-vertical: AppSizes.height_3,
-horizontal: AppSizes.width_5,
+
+   return SingleChildScrollView(
+     padding: EdgeInsets.symmetric(
+     vertical: AppSizes.height_3,
+     horizontal: AppSizes.width_5,
 ),
-child: Column(
-children: [
-_widgetRecentExercise(),
-_widgetSelectedPlan(),
-_textDaily(),
-_widgetWaterTracker(),
+    child: Column(
+       children: [
+      _widgetRecentExercise(),
+     _widgetSelectedPlan(),
+      _textDaily(),
+      _widgetWaterTracker(),
 ],
 ),
 );

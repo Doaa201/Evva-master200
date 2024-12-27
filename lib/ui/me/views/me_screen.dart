@@ -8,6 +8,7 @@ import 'package:women_lose_weight_flutter/utils/constant.dart';
 import 'package:women_lose_weight_flutter/utils/sizer_utils.dart';
 import 'package:women_lose_weight_flutter/utils/utils.dart';
 import '../../../utils/color.dart';
+import 'package:women_lose_weight_flutter/ui/about/views/about_screen.dart';
 
 class MeScreen extends StatelessWidget {
   MeScreen({super.key});
@@ -20,37 +21,6 @@ class MeScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _dividerWidget(),
-          _spaceWidget(h: AppSizes.height_2_5),
-          _commonTitleText("txtWorkout".tr),
-          _spaceWidget(h: AppSizes.height_3_3),
-          InkWell(
-            onTap: () {
-              Get.toNamed(AppRoutes.reminder);
-            },
-            child: Row(
-              children: [
-                Expanded(
-                  child: _commonFieldText(
-                    "txtReminder".tr,
-                    "",
-                    Icons.alarm,
-                    Constant.boolValueFalse,
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(
-                    right: AppSizes.width_5,
-                    left: AppSizes.width_5,
-                  ),
-                  child: const Icon(
-                    Icons.add,
-                    color: AppColor.primary,
-                  ),
-                ),
-              ],
-            ),
-          ),
           _spaceWidget(h: AppSizes.height_3),
           _dividerWidget(),
           _spaceWidget(),
@@ -97,96 +67,16 @@ class MeScreen extends StatelessWidget {
             Icons.add_box_outlined,
             Constant.boolValueFalse,
             onTap: () {
-              Get.toNamed(AppRoutes.myProfile); // Navigate to MyProfileScreen
+              Get.toNamed(AppRoutes.myProfile);
             },
           ),
+
           _spaceWidget(h: AppSizes.height_3),
-          _commonFieldText(
-            "txtRestartProgress".tr,
-            "",
-            Icons.refresh,
-            Constant.boolValueFalse,
-            onTap: () {
-              _dialogResetProgress();
-            },
-          ),
-          _spaceWidget(h: AppSizes.height_3),
-          _spaceWidget(),
-          Container(
-            margin: EdgeInsets.symmetric(horizontal: AppSizes.width_5),
-            child: Row(
-              children: [
-                const Icon(
-                  Icons.translate,
-                  color: AppColor.txtColor999,
-                ),
-                Expanded(
-                  child: GetBuilder<MeController>(
-                    id: Constant.idMeChangeLanguage,
-                    builder: (logic) {
-                      return Padding(
-                        padding: EdgeInsets.only(
-                          left: AppSizes.width_3,
-                        ),
-                        child: DropdownButton<LanguageModel>(
-                          value: logic.languagesChosenValue,
-                          isExpanded: true,
-                          elevation: 2,
-                          style: TextStyle(
-                            color: AppColor.black,
-                            fontSize: AppFontSize.size_12_5,
-                            fontWeight: FontWeight.w400,
-                          ),
-                          iconEnabledColor: AppColor.black,
-                          iconDisabledColor: AppColor.black,
-                          dropdownColor: AppColor.white,
-                          underline: Container(
-                            color: AppColor.transparent,
-                          ),
-                          isDense: true,
-                          items: languages
-                              .map<DropdownMenuItem<LanguageModel>>(
-                                (e) => DropdownMenuItem<LanguageModel>(
-                              value: e,
-                              child: Row(
-                                crossAxisAlignment:
-                                CrossAxisAlignment.center,
-                                children: <Widget>[
-                                  Expanded(
-                                    child: Text(
-                                      " ${e.language}",
-                                      style: TextStyle(
-                                        fontSize: AppFontSize.size_12_5,
-                                      ),
-                                    ),
-                                  ),
-                                  Text(
-                                    e.symbol,
-                                    style: TextStyle(
-                                      fontSize: AppFontSize.size_12_5,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          )
-                              .toList(),
-                          onChanged: (LanguageModel? value) {
-                            logic.onLanguageChange(value);
-                          },
-                        ),
-                      );
-                    },
-                  ),
-                ),
-              ],
-            ),
-          ),
           _spaceWidget(),
           _dividerWidget(),
           _spaceWidget(),
+          _spaceWidget(),
           _commonTitleText("txtSupportUs".tr),
-
           _spaceWidget(h: AppSizes.height_3),
           _commonFieldText(
             "txtFeedback".tr,
@@ -205,6 +95,41 @@ class MeScreen extends StatelessWidget {
             Constant.boolValueFalse,
             onTap: () {
               _meController.loadPrivacyPolicy();
+            },
+          ),
+          _spaceWidget(h: AppSizes.height_3),
+          // زر About Us
+          _commonFieldText(
+            "About Us", // نص الزر
+            "", // لا يوجد رمز
+            Icons.add_business_sharp, // لا يوجد أيقونة
+            Constant.boolValueFalse,
+            onTap: () {
+              // الانتقال إلى صفحة About Us
+              Get.toNamed(AppRoutes.about);
+            },
+          ),
+          _spaceWidget(h: AppSizes.height_3),
+          // زر Questions
+          _commonFieldText(
+            "Questions", // نص الزر
+            "", // لا يوجد رمز
+            Icons.question_answer, // أيقونة الأسئلة
+            Constant.boolValueFalse,
+            onTap: () {
+              // الانتقال إلى صفحة الأسئلة
+              Get.toNamed(AppRoutes.commonQuestions); // تأكد من تعريف مسار الأسئلة في تطبيقك
+            },
+          ),
+          _spaceWidget(h: AppSizes.height_3),
+          // زر تسجيل الخروج
+          _commonFieldText(
+            "txtLogout".tr,
+            "",
+            Icons.logout,
+            Constant.boolValueFalse,
+            onTap: () {
+              showLogoutDialog();
             },
           ),
           _spaceWidget(h: AppSizes.height_3),
@@ -303,42 +228,6 @@ class MeScreen extends StatelessWidget {
     );
   }
 
-  _dialogResetProgress() {
-    return showDialog<void>(
-      context: Get.context!,
-      barrierDismissible: false,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          titlePadding: EdgeInsets.zero,
-          actionsPadding: EdgeInsets.zero,
-          content: Text(
-            "txtAreYouSure".tr,
-            style: TextStyle(
-              color: AppColor.black,
-              fontSize: AppFontSize.size_12,
-              fontWeight: FontWeight.w400,
-            ),
-          ),
-          actions: <Widget>[
-            TextButton(
-              child: Text(
-                "txtCancel".tr.toUpperCase(),
-                style: TextStyle(
-                  color: AppColor.primary,
-                  fontSize: AppFontSize.size_11,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              onPressed: () {
-                Get.back();
-              },
-            ),
-          ],
-        );
-      },
-    );
-  }
-
   showLogoutDialog() {
     showDialog(
       context: Get.context!,
@@ -365,20 +254,6 @@ class MeScreen extends StatelessWidget {
                 const Spacer(),
                 TextButton(
                   child: Text(
-                    "txtCancel".tr.toUpperCase(),
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: AppColor.primary,
-                      fontSize: AppFontSize.size_11,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  onPressed: () {
-                    Get.back();
-                  },
-                ),
-                TextButton(
-                  child: Text(
                     "txtLogout".tr.toUpperCase(),
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -389,7 +264,9 @@ class MeScreen extends StatelessWidget {
                   ),
                   onPressed: () {
                     Get.back();
-                    _meController.signOutFromGoogle();
+                    _meController.signOutFromGoogle().then((_) {
+                      Get.offAllNamed(AppRoutes.signIn);
+                    });
                   },
                 ),
                 SizedBox(width: AppSizes.width_3),
