@@ -36,6 +36,8 @@ import '../ui/me/bindings/me_binding.dart';
 import '../ui/me/views/me_screen.dart';
 import '../ui/my_profile/bindings/my_profile_binding.dart';
 import '../ui/my_profile/views/my_profile_screen.dart';
+import '../ui/perform_exercise/bindings/perform_exercise_binding.dart';
+import '../ui/perform_exercise/views/perform_exercise_screen.dart';
 import '../ui/plan/bindings/plan_binding.dart';
 import '../ui/plan/views/plan_screen.dart';
 import '../ui/recent/bindings/recent_binding.dart';
@@ -161,6 +163,11 @@ class AppPages {
       name: AppRoutes.daysPlanDetail,
       page: () => DaysPlanDetailScreen(),
       binding: DaysPlanDetailBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.performExercise,
+      page: () => PerformExerciseScreen(),
+      binding: PerformExerciseBinding(),
     ),
 
     GetPage(
