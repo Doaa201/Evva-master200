@@ -55,7 +55,6 @@ final Map<String, String> arSA = {
   'txtSupportUs': "دعمنا",
   'txtShareWithFriends': "شارك مع الاصدقاء",
   'txtRateUs': "قيمنا",
-  'txtCommonQuestions': "الأسئلة الشائعة",
   'txtFeedback': "استجابة",
   'txtPrivacyPolicy': "سياسة الخصوصية",
   'txtWellDone': "أحسنت!",

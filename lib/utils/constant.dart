@@ -121,8 +121,6 @@ class Constant {
   static const idChooseHeightPickerDialog = "idChooseHeightPickerDialog";
   static const idChooseWeightPickerDialog = "idChooseWeightPickerDialog";
   static const idRadioGoogleTTSEngine = "idRadioGoogleTTSEngine";
-  static const idCommonQuestionsChip = "idCommonQuestionsChip";
-  static const idChangeCommonQuestionList = "idChangeCommonQuestionList";
   static const idReportWeightChart = "idReportWeightChart";
   static const idReportBmiChart = "idReportBmiChart";
   static const idWeightCompleted = "idWeightCompleted";

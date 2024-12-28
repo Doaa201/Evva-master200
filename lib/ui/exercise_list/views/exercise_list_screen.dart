@@ -1,4 +1,3 @@
-import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -6,7 +5,6 @@ import 'package:women_lose_weight_flutter/database/custom_classes/custom_classes
 import 'package:women_lose_weight_flutter/routes/app_routes.dart';
 import 'package:women_lose_weight_flutter/ui/exercise_list/controllers/exercise_list_controller.dart';
 
-import '../../../google_ads/custom_ad.dart';
 import '../../../utils/color.dart';
 import '../../../utils/constant.dart';
 import '../../../utils/sizer_utils.dart';
@@ -25,7 +23,7 @@ class ExerciseListScreen extends StatelessWidget {
       body: SafeArea(
         top: Constant.boolValueFalse,
         bottom:
-            (Platform.isIOS) ? Constant.boolValueFalse : Constant.boolValueTrue,
+             Constant.boolValueTrue,
         child: NestedScrollView(
           controller: _exerciseListController.scrollController,
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
@@ -211,9 +209,6 @@ class ExerciseListScreen extends StatelessWidget {
                   Row(
                     children: [
                       InkWell(
-                        onTap: () {
-                          Get.toNamed(AppRoutes.commonQuestions);
-                        },
                         child: Container(
                           margin: EdgeInsets.only(
                               top: AppSizes.height_0_8,
@@ -222,39 +217,8 @@ class ExerciseListScreen extends StatelessWidget {
                               horizontal: AppSizes.width_3,
                               vertical: AppSizes.height_1_2),
                           alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(100),
-                            color: AppColor.backgroundTint,
-                          ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Container(
-                                height: AppSizes.height_3,
-                                width: AppSizes.height_3,
-                                margin:
-                                    EdgeInsets.only(right: AppSizes.width_2),
-                                child: Image.asset(
-                                  Constant.getAssetIcons() + "ic_bulb.webp",
-                                  color: AppColor.white,
-                                ),
-                              ),
-                              Text(
-                                "txtCommonQuestions".tr,
-                                textAlign: TextAlign.left,
-                                style: TextStyle(
-                                  color: AppColor.white,
-                                  fontSize: AppFontSize.size_11,
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ),
-                            ],
-                          ),
                         ),
                       ),
-                      const Spacer(),
                     ],
                   ),
                 ],
@@ -337,19 +301,7 @@ class ExerciseListScreen extends StatelessWidget {
               },
               child: Row(
                 children: [
-                  Text(
-                    "txtEdit".tr.toUpperCase(),
-                    style: TextStyle(
-                      color: AppColor.txtColor666,
-                      fontSize: AppFontSize.size_12_5,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
                   SizedBox(width: AppSizes.width_2),
-                  const Icon(
-                    Icons.edit_outlined,
-                    color: AppColor.txtColor666,
-                  ),
                 ],
               ),
             ),

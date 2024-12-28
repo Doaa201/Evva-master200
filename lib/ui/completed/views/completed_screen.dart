@@ -818,9 +818,6 @@ class CompletedScreen extends StatelessWidget {
 
   _howOftenShouldWidget() {
     return InkWell(
-      onTap: () {
-        Get.toNamed(AppRoutes.commonQuestions);
-      },
       child: Container(
         width: AppSizes.fullWidth,
         padding: EdgeInsets.symmetric(
