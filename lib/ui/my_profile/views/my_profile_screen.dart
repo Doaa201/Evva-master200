@@ -23,7 +23,7 @@ class MyProfileScreen extends StatelessWidget {
             _widgetBack(),
             _chooseCategories(),
             _heightWeightTargetWeightWidget(),
-            //const BannerAdClass(),
+            // const BannerAdClass(),
           ],
         ),
       ),
@@ -85,9 +85,9 @@ class MyProfileScreen extends StatelessWidget {
                   },
                   child: Container(
                     padding:
-                        EdgeInsets.symmetric(vertical: AppSizes.height_1_2),
+                    EdgeInsets.symmetric(vertical: AppSizes.height_1_2),
                     decoration: BoxDecoration(
-                      color: (logic.isKgCmLbsFt)
+                      color: logic.isKgCm
                           ? AppColor.primary
                           : AppColor.white,
                       borderRadius: const BorderRadius.only(
@@ -100,39 +100,7 @@ class MyProfileScreen extends StatelessWidget {
                       "txtKgCm".tr,
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        color: (logic.isKgCmLbsFt)
-                            ? AppColor.white
-                            : AppColor.primary,
-                        fontSize: AppFontSize.size_11,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Expanded(
-                child: InkWell(
-                  onTap: () {
-                    logic.onSelectLbsFt();
-                  },
-                  child: Container(
-                    padding:
-                        EdgeInsets.symmetric(vertical: AppSizes.height_1_2),
-                    decoration: BoxDecoration(
-                      color: (!logic.isKgCmLbsFt)
-                          ? AppColor.primary
-                          : AppColor.white,
-                      borderRadius: const BorderRadius.only(
-                        topRight: Radius.circular(6),
-                        bottomRight: Radius.circular(6),
-                      ),
-                      border: Border.all(color: AppColor.primary),
-                    ),
-                    child: Text(
-                      "txtLbdFt".tr,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: (!logic.isKgCmLbsFt)
+                        color: logic.isKgCm
                             ? AppColor.white
                             : AppColor.primary,
                         fontSize: AppFontSize.size_11,
@@ -182,9 +150,7 @@ class MyProfileScreen extends StatelessWidget {
                         child: Column(
                           children: [
                             Text(
-                              (logic.isKgCmLbsFt)
-                                  ? logic.heightInCM!
-                                  : logic.heightInInFt!,
+                              logic.heightInCM!,
                               textAlign: TextAlign.right,
                               style: TextStyle(
                                 color: AppColor.black,
@@ -225,9 +191,7 @@ class MyProfileScreen extends StatelessWidget {
                         child: Column(
                           children: [
                             Text(
-                              (logic.isKgCmLbsFt)
-                                  ? logic.weightInKG!
-                                  : logic.weightInLbs!,
+                              logic.weightInKG!,
                               textAlign: TextAlign.right,
                               style: TextStyle(
                                 color: AppColor.black,
@@ -268,9 +232,7 @@ class MyProfileScreen extends StatelessWidget {
                         child: Column(
                           children: [
                             Text(
-                              (logic.isKgCmLbsFt)
-                                  ? logic.targetWeightInKG!
-                                  : logic.targetWeightInLbs!,
+                              logic.targetWeightInKG!,
                               textAlign: TextAlign.right,
                               style: TextStyle(
                                 color: AppColor.black,
