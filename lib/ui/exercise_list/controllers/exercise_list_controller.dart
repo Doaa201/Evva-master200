@@ -84,18 +84,18 @@ class ExerciseListController extends GetxController
 
   @override
   void onInit() {
-    _loadRewardedAd();
-    Future.delayed(const Duration(milliseconds: 1), () {
-      if (!Utils.isPurchased()) {
-        showDialog(
-          useSafeArea: false,
-          context: Get.context!,
-          builder: (BuildContext context) {
-            return WatchAdDialog();
-          },
-        );
-      }
-    });
+    // _loadRewardedAd();
+    // Future.delayed(const Duration(milliseconds: 1), () {
+    //   if (!Utils.isPurchased()) {
+    //     showDialog(
+    //       useSafeArea: false,
+    //       context: Get.context!,
+    //       builder: (BuildContext context) {
+    //         return WatchAdDialog();
+    //       },
+    //     );
+    //   }
+    // });
     scrollController = ScrollController();
     scrollController!.addListener(() {
       offset = scrollController!.offset;
@@ -362,7 +362,7 @@ class ExerciseListController extends GetxController
       exerciseList,
       listOfAnimation,
       listOfAnimationController,
-      "1",
+      null,
       workoutPlanData!.planDays == Constant.planDaysYes ? weeklyDaysData : null,
     ])!
         .then((value) => _getDataFromDataBase());
