@@ -36,12 +36,7 @@ class QuiteWorkout extends StatelessWidget {
                       Stack(
                         alignment: Alignment.topRight,
                         children: [
-                          // Image.asset(
-                          //   Constant.getAssetImage() + "bg_exit_dialog.webp",
-                          //   width: AppSizes.fullWidth,
-                          //   height: AppSizes.height_27,
-                          //   fit: BoxFit.cover,
-                          // ),
+
                           Container(
                             margin: EdgeInsets.all(AppSizes.height_1_8),
                             child: IconButton(
