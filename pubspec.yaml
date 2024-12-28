@@ -321,7 +321,7 @@ flutter:
     - assets/img_ex/WALLSIT/
     - assets/img_ex/XBURPEES/
     - assets/img_ex/XMANCRUNCH/
-    - assets/raw/
+
 
   fonts:
     - family: SFProDisplay

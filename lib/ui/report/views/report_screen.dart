@@ -155,7 +155,7 @@ class ReportScreen extends StatelessWidget {
 
   _widgetHistory() {
     return GetBuilder<ReportController>(
-       
+
         builder: (logic) {
           return Column(
             children: [
@@ -186,7 +186,7 @@ class ReportScreen extends StatelessWidget {
                         minHeight: 70,
                       ),
                       margin:
-                          EdgeInsets.symmetric(vertical: AppSizes.height_2_5),
+                      EdgeInsets.symmetric(vertical: AppSizes.height_2_5),
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
                         itemCount: logic.isAvailableHistory.length,
@@ -249,27 +249,27 @@ class ReportScreen extends StatelessWidget {
               ),
             ),
             child: (logic.isAvailableHistory.isNotEmpty &&
-                    !logic.isAvailableHistory[index])
+                !logic.isAvailableHistory[index])
                 ? Container(
-                    alignment: Alignment.center,
-                    child: Text(
-                      Utils.getDaysDateOfWeek()[index].toString(),
-                      textAlign: TextAlign.left,
-                      style: TextStyle(
-                        color: Utils.getDaysDateOfWeek()[index].toString() !=
-                                DateFormat(DateFormat.DAY)
-                                    .format(DateTime.now())
-                            ? AppColor.txtColor666
-                            : AppColor.primary,
-                        fontSize: AppFontSize.size_10,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                  )
+              alignment: Alignment.center,
+              child: Text(
+                Utils.getDaysDateOfWeek()[index].toString(),
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  color: Utils.getDaysDateOfWeek()[index].toString() !=
+                      DateFormat(DateFormat.DAY)
+                          .format(DateTime.now())
+                      ? AppColor.txtColor666
+                      : AppColor.primary,
+                  fontSize: AppFontSize.size_10,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+            )
                 : Container(
-                    alignment: Alignment.center,
-                    child: Image.asset(Constant.getAssetIcons() +
-                        "ic_challenge_complete_day.webp")),
+                alignment: Alignment.center,
+                child: Image.asset(Constant.getAssetIcons() +
+                    "ic_challenge_complete_day.webp")),
           ),
         ],
       ),
@@ -294,7 +294,7 @@ class ReportScreen extends StatelessWidget {
                       },
                       child: Padding(
                         padding:
-                            EdgeInsets.symmetric(horizontal: AppSizes.width_3),
+                        EdgeInsets.symmetric(horizontal: AppSizes.width_3),
                         child: const Icon(
                           Icons.add,
                           color: AppColor.black,
@@ -421,7 +421,7 @@ class ReportScreen extends StatelessWidget {
             animate: false,
             domainAxis: charts.DateTimeAxisSpec(
               tickProviderSpec:
-                  const charts.DayTickProviderSpec(increments: [1]),
+              const charts.DayTickProviderSpec(increments: [1]),
               viewport: charts.DateTimeExtents(
                   start: DateTime.now().subtract(const Duration(days: 5)),
                   end: DateTime.now().add(const Duration(days: 3))),
@@ -465,12 +465,12 @@ class ReportScreen extends StatelessWidget {
             selectionModels: [
               charts.SelectionModelConfig(
                   changedListener: (charts.SelectionModel model) {
-                if (model.hasDatumSelection) {
-                  final value = model.selectedSeries[0]
-                      .measureFn(model.selectedDatum[0].index);
-                  CustomCircleSymbolRenderer.value = value.toString();
-                }
-              }),
+                    if (model.hasDatumSelection) {
+                      final value = model.selectedSeries[0]
+                          .measureFn(model.selectedDatum[0].index);
+                      CustomCircleSymbolRenderer.value = value.toString();
+                    }
+                  }),
             ],
           ),
         );
