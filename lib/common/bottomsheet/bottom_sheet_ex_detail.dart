@@ -378,41 +378,6 @@ class _BottomSheetExDetailsState extends State<BottomSheetExDetails> {
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  InkWell(
-                    onTap: () {
-                      Get.toNamed(AppRoutes.commonQuestions);
-                    },
-                    child: Container(
-                      margin: EdgeInsets.symmetric(
-                          vertical: AppSizes.height_2,
-                          horizontal: AppSizes.width_3),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Container(
-                            height: AppSizes.height_3_2,
-                            width: AppSizes.height_3_2,
-                            margin: EdgeInsets.only(right: AppSizes.width_2),
-                            child: Image.asset(
-                              Constant.getAssetIcons() + "ic_bulb.webp",
-                              color: AppColor.primary,
-                            ),
-                          ),
-                          Text(
-                            "txtCommonQuestions".tr,
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                              color: AppColor.primary,
-                              fontSize: AppFontSize.size_11,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
                 ],
               ),
             ),

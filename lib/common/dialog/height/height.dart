@@ -10,8 +10,12 @@ import '../../../utils/utils.dart';
 class DialogHeight extends StatelessWidget {
   DialogHeight({super.key});
 
+<<<<<<< HEAD
   final MyProfileController _myProfileController = Get.find<
       MyProfileController>();
+=======
+  final MyProfileController _myProfileController = Get.find<MyProfileController>();
+>>>>>>> d0b02d37954b414fa4cbb645a64ef26e56cd0d97
 
   @override
   Widget build(BuildContext context) {
@@ -61,8 +65,12 @@ class DialogHeight extends StatelessWidget {
                               child: CupertinoPicker(
                                 useMagnifier: Constant.boolValueTrue,
                                 looping: Constant.boolValueTrue,
+<<<<<<< HEAD
                                 scrollController: logic
                                     .fixedExtentScrollControllerCm,
+=======
+                                scrollController: logic.fixedExtentScrollControllerCm,
+>>>>>>> d0b02d37954b414fa4cbb645a64ef26e56cd0d97
                                 onSelectedItemChanged: (value) {
                                   logic.onChangeCMValue(value + 20);
                                 },
@@ -70,10 +78,15 @@ class DialogHeight extends StatelessWidget {
                                 selectionOverlay: Container(
                                   decoration: const BoxDecoration(
                                     border: Border(
+<<<<<<< HEAD
                                       top: BorderSide(
                                           width: 0.8, color: AppColor.primary),
                                       bottom: BorderSide(
                                           width: 0.8, color: AppColor.primary),
+=======
+                                      top: BorderSide(width: 0.8, color: AppColor.primary),
+                                      bottom: BorderSide(width: 0.8, color: AppColor.primary),
+>>>>>>> d0b02d37954b414fa4cbb645a64ef26e56cd0d97
                                     ),
                                   ),
                                 ),
@@ -84,8 +97,12 @@ class DialogHeight extends StatelessWidget {
                                     return Align(
                                       alignment: Alignment.center,
                                       child: Text(
+<<<<<<< HEAD
                                         Utils.decimalNumberFormat(index)
                                             .toString(),
+=======
+                                        Utils.decimalNumberFormat(index).toString(),
+>>>>>>> d0b02d37954b414fa4cbb645a64ef26e56cd0d97
                                         style: TextStyle(
                                           color: AppColor.black,
                                           fontSize: AppFontSize.size_20,
@@ -104,8 +121,7 @@ class DialogHeight extends StatelessWidget {
                               height: AppSizes.fullHeight * 0.25,
                               child: CupertinoPicker(
                                 useMagnifier: Constant.boolValueFalse,
-                                scrollController: FixedExtentScrollController(
-                                    initialItem: logic.heightUnitValue),
+                                scrollController: FixedExtentScrollController(initialItem: logic.heightUnitValue),
                                 looping: Constant.boolValueFalse,
                                 onSelectedItemChanged: (value) {
                                   logic.onChangeHeightUnit(value);
@@ -114,10 +130,8 @@ class DialogHeight extends StatelessWidget {
                                 selectionOverlay: Container(
                                   decoration: const BoxDecoration(
                                     border: Border(
-                                      top: BorderSide(
-                                          width: 0.8, color: AppColor.primary),
-                                      bottom: BorderSide(
-                                          width: 0.8, color: AppColor.primary),
+                                      top: BorderSide(width: 0.8, color: AppColor.primary),
+                                      bottom: BorderSide(width: 0.8, color: AppColor.primary),
                                     ),
                                   ),
                                 ),
@@ -150,19 +164,27 @@ class DialogHeight extends StatelessWidget {
                     Expanded(
                       child: TextButton(
                         style: ButtonStyle(
+<<<<<<< HEAD
                           backgroundColor: WidgetStateProperty.all(
                               AppColor.grayDivider),
                           shape: WidgetStateProperty.all<
                               RoundedRectangleBorder>(
+=======
+                          backgroundColor: WidgetStateProperty.all(AppColor.grayDivider),
+                          shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+>>>>>>> d0b02d37954b414fa4cbb645a64ef26e56cd0d97
                             const RoundedRectangleBorder(
-                              borderRadius: BorderRadius.only(
-                                  bottomLeft: Radius.circular(2)),
+                              borderRadius: BorderRadius.only(bottomLeft: Radius.circular(2)),
                             ),
                           ),
                         ),
                         child: Padding(
+<<<<<<< HEAD
                           padding: EdgeInsets.symmetric(vertical: AppSizes
                               .height_0_8),
+=======
+                          padding: EdgeInsets.symmetric(vertical: AppSizes.height_0_8),
+>>>>>>> d0b02d37954b414fa4cbb645a64ef26e56cd0d97
                           child: Text(
                             "txtCancel".tr.toUpperCase(),
                             style: TextStyle(
@@ -180,19 +202,27 @@ class DialogHeight extends StatelessWidget {
                     Expanded(
                       child: TextButton(
                         style: ButtonStyle(
+<<<<<<< HEAD
                           backgroundColor: WidgetStateProperty.all(
                               AppColor.primary),
                           shape: WidgetStateProperty.all<
                               RoundedRectangleBorder>(
+=======
+                          backgroundColor: WidgetStateProperty.all(AppColor.primary),
+                          shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+>>>>>>> d0b02d37954b414fa4cbb645a64ef26e56cd0d97
                             const RoundedRectangleBorder(
-                              borderRadius: BorderRadius.only(
-                                  bottomRight: Radius.circular(2)),
+                              borderRadius: BorderRadius.only(bottomRight: Radius.circular(2)),
                             ),
                           ),
                         ),
                         child: Padding(
+<<<<<<< HEAD
                           padding: EdgeInsets.symmetric(vertical: AppSizes
                               .height_0_8),
+=======
+                          padding: EdgeInsets.symmetric(vertical: AppSizes.height_0_8),
+>>>>>>> d0b02d37954b414fa4cbb645a64ef26e56cd0d97
                           child: Text(
                             "txtSave".tr.toUpperCase(),
                             style: TextStyle(

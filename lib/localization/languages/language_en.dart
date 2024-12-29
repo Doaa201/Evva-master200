@@ -55,7 +55,6 @@ final Map<String, String> enUS = {
   'txtSupportUs': "Support Us",
   'txtShareWithFriends': "Share with friends",
   'txtRateUs': "Rate us",
-  'txtCommonQuestions': "Common questions",
   'txtFeedback': "Feedback",
   'txtPrivacyPolicy': "Privacy policy",
   'txtWellDone': "Well done!",

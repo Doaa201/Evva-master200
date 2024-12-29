@@ -25,7 +25,7 @@ class DaysPlanDetailScreen extends StatelessWidget {
       body: SafeArea(
         top: Constant.boolValueFalse,
         bottom:
-            (Platform.isIOS) ? Constant.boolValueFalse : Constant.boolValueTrue,
+            Constant.boolValueTrue,
         child: Column(
           children: [
             Expanded(
@@ -479,14 +479,6 @@ class DaysPlanDetailScreen extends StatelessWidget {
                       color: AppColor.primary,
                     ),
                   ),
-                  Text(
-                    "txtChangePlan".tr,
-                    style: TextStyle(
-                      color: AppColor.primary,
-                      fontSize: AppFontSize.size_11,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  )
                 ],
               ),
             ),

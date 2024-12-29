@@ -502,13 +502,6 @@ class PerformExerciseController extends FullLifeCycleController
     });
   }
 
-  onCommonQuestionClick() {
-    pauseTimers();
-    removeBindingObserver();
-    Get.toNamed(AppRoutes.commonQuestions)!.then((value) {
-      resumeTimers();
-    });
-  }
 
   onQuiteButtonClick() async {
     var calValue = Constant.secDurationCal * totalExTime;

@@ -179,9 +179,6 @@ class PerformExerciseScreen extends StatelessWidget {
           ),
         ),
         InkWell(
-          onTap: () {
-            _performExerciseController.onCommonQuestionClick();
-          },
           child: Container(
             width: AppSizes.height_5,
             height: AppSizes.height_5,

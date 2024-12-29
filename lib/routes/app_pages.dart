@@ -4,8 +4,6 @@ import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 import 'package:women_lose_weight_flutter/ui/access_all_features/bindings/access_all_features_binding.dart';
 import 'package:women_lose_weight_flutter/ui/access_all_features/views/access_all_features.dart';
-import 'package:women_lose_weight_flutter/ui/common_questions/bindings/common_questions_binding.dart';
-import 'package:women_lose_weight_flutter/ui/common_questions/views/common_questions_screen.dart';
 import '../ui/about/bindings/about_binding.dart';
 import '../ui/about/views/about_screen.dart';
 import '../ui/bmi/bindings/bmi_binding.dart';
@@ -18,6 +16,8 @@ import '../ui/choose_weight/bindings/choose_weight_binding.dart';
 import '../ui/choose_weight/views/choose_weight_screen.dart';
 import '../ui/completed/bindings/completed_binding.dart';
 import '../ui/completed/views/completed_screen.dart';
+import 'package:women_lose_weight_flutter/ui/perform_exercise/bindings/perform_exercise_binding.dart';
+
 import '../ui/create_new_password/bindings/create_new_password_binding.dart';
 import '../ui/create_new_password/views/create_new_password_screen.dart';
 import '../ui/days_plan_detail/bindings/days_plan_detail_binding.dart';
@@ -60,6 +60,8 @@ import '../ui/your_plan/bindings/your_plan_binding.dart';
 import '../ui/your_plan/views/your_plan_screen.dart';
 import '../utils/color.dart';
 import 'app_routes.dart';
+import '../ui/perform_exercise/views/perform_exercise_screen.dart';
+
 
 class AppPages {
   static var list = [
@@ -79,6 +81,11 @@ class AppPages {
         },
       ),
       binding: HomeBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.performExercise,
+      page: () => PerformExerciseScreen(),
+      binding: PerformExerciseBinding(),
     ),
 
     GetPage(
@@ -110,11 +117,6 @@ class AppPages {
       name: AppRoutes.accessAllFeature,
       page: () => const AccessAllFeaturesScreen(),
       binding: AccessAllFeaturesBinding(),
-    ),
-    GetPage(
-      name: AppRoutes.commonQuestions,
-      page: () => CommonQuestionsScreen(),
-      binding: CommonQuestionsBinding(),
     ),
     GetPage(
       name: AppRoutes.plan,

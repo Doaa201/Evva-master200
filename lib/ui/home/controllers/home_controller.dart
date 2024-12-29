@@ -30,19 +30,7 @@ class HomeController extends GetxController implements IAPCallback{
   }
 
   Future<bool> _requestPermissions() async {
-    if (Platform.isIOS || Platform.isMacOS) {
-      await flutterLocalNotificationsPlugin
-          .resolvePlatformSpecificImplementation<
-          IOSFlutterLocalNotificationsPlugin>()
-          ?.requestPermissions(
-        alert: true,
-        badge: true,
-        sound: true,
-      )
-          .then((value) {
-        return notificationsEnabled = value ?? false;
-      });
-    } else if (Platform.isAndroid) {
+     if (Platform.isAndroid) {
       final AndroidFlutterLocalNotificationsPlugin? androidImplementation =
       flutterLocalNotificationsPlugin.resolvePlatformSpecificImplementation<
           AndroidFlutterLocalNotificationsPlugin>();

@@ -110,18 +110,6 @@ class MeScreen extends StatelessWidget {
             },
           ),
           _spaceWidget(h: AppSizes.height_3),
-          // زر Questions
-          _commonFieldText(
-            "Questions", // نص الزر
-            "", // لا يوجد رمز
-            Icons.question_answer, // أيقونة الأسئلة
-            Constant.boolValueFalse,
-            onTap: () {
-              // الانتقال إلى صفحة الأسئلة
-              Get.toNamed(AppRoutes.commonQuestions); // تأكد من تعريف مسار الأسئلة في تطبيقك
-            },
-          ),
-          _spaceWidget(h: AppSizes.height_3),
           // زر تسجيل الخروج
           _commonFieldText(
             "txtLogout".tr,
@@ -133,24 +121,6 @@ class MeScreen extends StatelessWidget {
             },
           ),
           _spaceWidget(h: AppSizes.height_3),
-          GetBuilder<MeController>(
-            id: Constant.idLoginInfo,
-            builder: (logic) {
-              if (_meController.firebaseAuth.currentUser != null &&
-                  _meController.firebaseAuth.currentUser!.photoURL != null) {
-                return _commonFieldText(
-                  "txtAccountDelete".tr,
-                  "",
-                  Icons.delete_forever,
-                  Constant.boolValueFalse,
-                  onTap: () {
-                    showDeleteAccountDialog();
-                  },
-                );
-              }
-              return const SizedBox();
-            },
-          ),
         ],
       ),
     );
@@ -278,65 +248,4 @@ class MeScreen extends StatelessWidget {
     );
   }
 
-  showDeleteAccountDialog() {
-    showDialog(
-      context: Get.context!,
-      builder: (BuildContext context) => Dialog(
-        insetPadding: EdgeInsets.symmetric(horizontal: AppSizes.width_6),
-        child: Wrap(
-          crossAxisAlignment: WrapCrossAlignment.start,
-          children: <Widget>[
-            Container(
-              margin: EdgeInsets.symmetric(
-                  vertical: AppSizes.height_3, horizontal: AppSizes.width_6),
-              child: Text(
-                "txtAreSureWantDeleteYourAccount".tr,
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                  color: AppColor.black,
-                  fontSize: AppFontSize.size_13,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-            ),
-            Row(
-              children: [
-                const Spacer(),
-                TextButton(
-                  child: Text(
-                    "txtCancel".tr.toUpperCase(),
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: AppColor.primary,
-                      fontSize: AppFontSize.size_11,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  onPressed: () {
-                    Get.back();
-                  },
-                ),
-                TextButton(
-                  child: Text(
-                    "txtDeleteDes".tr.toUpperCase(),
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: AppColor.primary,
-                      fontSize: AppFontSize.size_11,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  onPressed: () {
-                    Get.back();
-                    _meController.deleteAccountFromGoogle();
-                  },
-                ),
-                SizedBox(width: AppSizes.width_3),
-              ],
-            ),
-          ],
-        ),
-      ),
-    );
-  }
 }

@@ -28,7 +28,6 @@ class AppRoutes {
   static const String reminder = '/reminder';
   static const String myProfile = '/myProfile';
   static const String voiceOptions = '/voiceOptions';
-  static const String commonQuestions = '/commonQuestions';
   static const String daysPlanDetail = '/daysPlanDetail';
   static const String fastWorkOutDetail = '/fastWorkOutDetail';
   static const String report = '/report';
