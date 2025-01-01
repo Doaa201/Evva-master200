@@ -31,15 +31,14 @@ import 'utils/constant.dart';
 import 'utils/debug.dart';
 import 'utils/preference.dart';
 
-
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
-    FlutterLocalNotificationsPlugin();
+FlutterLocalNotificationsPlugin();
 
 final BehaviorSubject<ReceivedNotification> didReceiveLocalNotificationSubject =
-    BehaviorSubject<ReceivedNotification>();
+BehaviorSubject<ReceivedNotification>();
 
 final BehaviorSubject<String?> selectNotificationSubject =
-    BehaviorSubject<String?>();
+BehaviorSubject<String?>();
 
 class ReceivedNotification {
   ReceivedNotification({
@@ -58,10 +57,10 @@ class ReceivedNotification {
 Future<void> initPlugin() async {
   try {
     final TrackingStatus status =
-        await AppTrackingTransparency.trackingAuthorizationStatus;
+    await AppTrackingTransparency.trackingAuthorizationStatus;
     if (status == TrackingStatus.notDetermined) {
       var authStatus =
-          await AppTrackingTransparency.requestTrackingAuthorization();
+      await AppTrackingTransparency.requestTrackingAuthorization();
       Preference.shared
           .setString(Preference.trackStatus, authStatus.toString());
     }
@@ -104,10 +103,10 @@ Future<void> main() async {
 
   /// Initialize Notification
   const AndroidInitializationSettings initializationSettingsAndroid =
-      AndroidInitializationSettings('ic_notification');
+  AndroidInitializationSettings('ic_notification');
 
   final DarwinInitializationSettings initializationSettingsIOS =
-      DarwinInitializationSettings(
+  DarwinInitializationSettings(
     requestAlertPermission: true,
     requestBadgePermission: true,
     requestSoundPermission: true,
@@ -125,12 +124,12 @@ Future<void> main() async {
 
   await flutterLocalNotificationsPlugin.initialize(initializationSettings,
       onDidReceiveNotificationResponse: (NotificationResponse? notificationResponse) async {
-    if (notificationResponse!.payload != null && notificationResponse.payload == Constant.strExerciseReminder) {
-    } else if (notificationResponse.payload != null && notificationResponse.payload == Constant.strWaterReminder) {}
+        if (notificationResponse!.payload != null && notificationResponse.payload == Constant.strExerciseReminder) {
+        } else if (notificationResponse.payload != null && notificationResponse.payload == Constant.strWaterReminder) {}
 
-    selectedNotificationPayload = notificationResponse.payload;
-    selectNotificationSubject.add(notificationResponse.payload);
-  });
+        selectedNotificationPayload = notificationResponse.payload;
+        selectNotificationSubject.add(notificationResponse.payload);
+      });
 
   /// Initialize Local TimeZone
   _configureLocalTimeZone();
@@ -186,7 +185,7 @@ class _MyAppState extends State<MyApp> {
     super.didChangeDependencies();
   }
   _rescheduleWaterTrackerNotifications() async {
-  await _requestPermissions();
+    await _requestPermissions();
     bool isTurnOnWaterTracker =
         Preference.shared.getBool(Preference.turnOnWaterTracker) ??
             Constant.boolValueTrue;
@@ -242,8 +241,8 @@ class _MyAppState extends State<MyApp> {
       getPages: AppPages.list,
       defaultTransition: Transition.fade,
       transitionDuration: const Duration(milliseconds: 200),
-      initialRoute:AppRoutes.home
-          // (Utils.isFirstTimeOpenApp()) ? AppRoutes.initial : AppRoutes.home,
+      initialRoute:
+      (Utils.isFirstTimeOpenApp()) ? AppRoutes.initial : AppRoutes.home,
     );
   }
 }

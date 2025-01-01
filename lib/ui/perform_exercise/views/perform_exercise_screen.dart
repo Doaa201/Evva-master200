@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:path/path.dart';
 import 'package:women_lose_weight_flutter/ui/perform_exercise/controllers/perform_exercise_controller.dart';
 import 'package:women_lose_weight_flutter/utils/color.dart';
 import 'package:women_lose_weight_flutter/utils/constant.dart';
@@ -13,7 +14,7 @@ class PerformExerciseScreen extends StatelessWidget {
   PerformExerciseScreen({super.key});
 
   final PerformExerciseController _performExerciseController =
-      Get.find<PerformExerciseController>();
+  Get.find<PerformExerciseController>();
 
   @override
   Widget build(BuildContext context) {
@@ -99,9 +100,9 @@ class PerformExerciseScreen extends StatelessWidget {
                               _performExerciseController.exerciseList.length,
                           child: Divider(
                             color:
-                                (_performExerciseController.currentPos > index)
-                                    ? AppColor.primary
-                                    : AppColor.transparent,
+                            (_performExerciseController.currentPos > index)
+                                ? AppColor.primary
+                                : AppColor.transparent,
                             thickness: AppSizes.height_0_6,
                           ),
                         );
@@ -109,7 +110,7 @@ class PerformExerciseScreen extends StatelessWidget {
                       physics: const NeverScrollableScrollPhysics(),
                       scrollDirection: Axis.horizontal,
                       itemCount:
-                          _performExerciseController.exerciseList.length - 1,
+                      _performExerciseController.exerciseList.length - 1,
                     ),
                   );
                 },
@@ -179,6 +180,9 @@ class PerformExerciseScreen extends StatelessWidget {
           ),
         ),
         InkWell(
+          onTap: () {
+            // _performExerciseController.onCommonQuestionClick();
+          },
           child: Container(
             width: AppSizes.height_5,
             height: AppSizes.height_5,
@@ -225,26 +229,26 @@ class PerformExerciseScreen extends StatelessWidget {
           ),
           child: RichText(
             text: TextSpan(
-              text: _performExerciseController.getExeName(),
-              style: TextStyle(
-                color: AppColor.black,
-                fontSize: AppFontSize.size_17,
-                fontWeight: FontWeight.w500,
-              ),
-              children: [
-                WidgetSpan(child: SizedBox(width: AppSizes.width_2),),
-                WidgetSpan(child: InkWell(
-                  onTap: () {
-                    _performExerciseController.onWorkOutInfoClick(
-                        _performExerciseController.currentPos);
-                  },
-                  child: Image.asset(
-                    Constant.getAssetIcons() + "icon_exe_question.webp",
-                    height: AppSizes.height_3_2,
-                    width: AppSizes.height_3_2,
-                  ),
-                ),)
-              ]
+                text: _performExerciseController.getExeName(),
+                style: TextStyle(
+                  color: AppColor.black,
+                  fontSize: AppFontSize.size_17,
+                  fontWeight: FontWeight.w500,
+                ),
+                children: [
+                  WidgetSpan(child: SizedBox(width: AppSizes.width_2),),
+                  WidgetSpan(child: InkWell(
+                    onTap: () {
+                      _performExerciseController.onWorkOutInfoClick(
+                          _performExerciseController.currentPos);
+                    },
+                    child: Image.asset(
+                      Constant.getAssetIcons() + "icon_exe_question.webp",
+                      height: AppSizes.height_3_2,
+                      width: AppSizes.height_3_2,
+                    ),
+                  ),)
+                ]
             ),
             textAlign: TextAlign.center,
             maxLines: 2,
@@ -288,7 +292,8 @@ class PerformExerciseScreen extends StatelessWidget {
               _performExerciseController.countDownTimerChange(value);
             },
             onComplete: () {
-              _performExerciseController.countDownTimerFinish();
+              Get.back();
+              // _performExerciseController.countDownTimerFinish();
             },
           ),
           Row(
@@ -328,8 +333,8 @@ class PerformExerciseScreen extends StatelessWidget {
                     Constant.workoutTypeStep) ...{
                   Text(
                     "X ${_performExerciseController
-                            .exerciseList[_performExerciseController.currentPos]
-                            .exTime}",
+                        .exerciseList[_performExerciseController.currentPos]
+                        .exTime}",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: AppColor.black,
@@ -343,10 +348,10 @@ class PerformExerciseScreen extends StatelessWidget {
                     builder: (logic) {
                       return Text(
                         "${_performExerciseController.formatDDHHMMSS(
-                                _performExerciseController.exTime,
-                                returnType: Constant.minute)}:${_performExerciseController.formatDDHHMMSS(
-                                _performExerciseController.exTime,
-                                returnType: Constant.seconds)}",
+                            _performExerciseController.exTime,
+                            returnType: Constant.minute)}:${_performExerciseController.formatDDHHMMSS(
+                            _performExerciseController.exTime,
+                            returnType: Constant.seconds)}",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: AppColor.black,
@@ -373,11 +378,11 @@ class PerformExerciseScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(40.0),
                             child: LinearProgressIndicator(
                               value: (_performExerciseController
-                                          .currentExe!.exUnit ==
-                                      Constant.workoutTypeStep)
+                                  .currentExe!.exUnit ==
+                                  Constant.workoutTypeStep)
                                   ? 1
                                   : _performExerciseController
-                                      .buttonProgressValue,
+                                  .buttonProgressValue,
                               valueColor: const AlwaysStoppedAnimation<Color>(
                                   AppColor.primary),
                               backgroundColor: AppColor.primary.withOpacity(.3),
@@ -401,17 +406,17 @@ class PerformExerciseScreen extends StatelessWidget {
                         children: [
                           Image.asset(
                             (_performExerciseController.currentExe!.exUnit ==
-                                    Constant.workoutTypeStep)
+                                Constant.workoutTypeStep)
                                 ? Constant.getAssetIcons() +
-                                    "icon_exe_done.webp"
+                                "icon_exe_done.webp"
                                 : Constant.getAssetIcons() +
-                                    "icon_exe_pause.webp",
+                                "icon_exe_pause.webp",
                             height: AppSizes.height_2_6,
                             color: AppColor.white,
                           ),
                           Text(
                             (_performExerciseController.currentExe!.exUnit ==
-                                    Constant.workoutTypeStep)
+                                Constant.workoutTypeStep)
                                 ? " ${"txtDone".tr.toUpperCase()}"
                                 : " ${"txtPause".tr.toUpperCase()}",
                             textAlign: TextAlign.center,
@@ -427,74 +432,74 @@ class PerformExerciseScreen extends StatelessWidget {
                   ],
                 ),
                 const Spacer(),
-                IntrinsicHeight(
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: InkWell(
-                          onTap: () {
-                            _performExerciseController.onPreviousButtonClick();
-                          },
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Image.asset(
-                                Constant.getAssetIcons() + "icon_exe_prev.webp",
-                                color:
-                                    (_performExerciseController.currentPos == 0)
-                                        ? AppColor.txtColor999
-                                        : AppColor.txtColor666,
-                                height: AppSizes.height_3_5,
-                                width: AppSizes.height_3_5,
-                              ),
-                              Text(
-                                "txtPrevious".tr,
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color:
-                                      (_performExerciseController.currentPos ==
-                                              0)
-                                          ? AppColor.txtColor999
-                                          : AppColor.txtColor666,
-                                  fontSize: AppFontSize.size_12_5,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      const VerticalDivider(color: AppColor.txtColor999),
-                      Expanded(
-                        child: InkWell(
-                          onTap: () {
-                            _performExerciseController.onSkipButtonClick();
-                          },
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Image.asset(
-                                Constant.getAssetIcons() + "icon_exe_skip.webp",
-                                color: AppColor.txtColor666,
-                                height: AppSizes.height_3_5,
-                                width: AppSizes.height_3_5,
-                              ),
-                              Text(
-                                "txtSkip".tr,
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: AppColor.txtColor666,
-                                  fontSize: AppFontSize.size_12_5,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                // IntrinsicHeight(
+                //   child: Row(
+                //     children: [
+                //       Expanded(
+                //         child: InkWell(
+                //           onTap: () {
+                //             _performExerciseController.onPreviousButtonClick();
+                //           },
+                //           child: Row(
+                //             mainAxisAlignment: MainAxisAlignment.center,
+                //             children: [
+                //               Image.asset(
+                //                 Constant.getAssetIcons() + "icon_exe_prev.webp",
+                //                 color:
+                //                 (_performExerciseController.currentPos == 0)
+                //                     ? AppColor.txtColor999
+                //                     : AppColor.txtColor666,
+                //                 height: AppSizes.height_3_5,
+                //                 width: AppSizes.height_3_5,
+                //               ),
+                //               Text(
+                //                 "txtPrevious".tr,
+                //                 textAlign: TextAlign.center,
+                //                 style: TextStyle(
+                //                   color:
+                //                   (_performExerciseController.currentPos ==
+                //                       0)
+                //                       ? AppColor.txtColor999
+                //                       : AppColor.txtColor666,
+                //                   fontSize: AppFontSize.size_12_5,
+                //                   fontWeight: FontWeight.w500,
+                //                 ),
+                //               ),
+                //             ],
+                //           ),
+                //         ),
+                //       ),
+                //       const VerticalDivider(color: AppColor.txtColor999),
+                //       // Expanded(
+                //       //   child: InkWell(
+                //       //     onTap: () {
+                //       //       _performExerciseController.onSkipButtonClick();
+                //       //     },
+                //       //     child: Row(
+                //       //       mainAxisAlignment: MainAxisAlignment.center,
+                //       //       children: [
+                //       //         Image.asset(
+                //       //           Constant.getAssetIcons() + "icon_exe_skip.webp",
+                //       //           color: AppColor.txtColor666,
+                //       //           height: AppSizes.height_3_5,
+                //       //           width: AppSizes.height_3_5,
+                //       //         ),
+                //       //         Text(
+                //       //           "txtSkip".tr,
+                //       //           textAlign: TextAlign.center,
+                //       //           style: TextStyle(
+                //       //             color: AppColor.txtColor666,
+                //       //             fontSize: AppFontSize.size_12_5,
+                //       //             fontWeight: FontWeight.w500,
+                //       //           ),
+                //       //         ),
+                //       //       ],
+                //       //     ),
+                //       //   ),
+                //       // ),
+                //     ],
+                //   ),
+                // ),
               ],
             ),
           ),
