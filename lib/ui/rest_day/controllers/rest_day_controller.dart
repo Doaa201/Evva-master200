@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:women_lose_weight_flutter/database/helper/db_helper.dart';
 import 'package:women_lose_weight_flutter/utils/utils.dart';
@@ -12,6 +13,9 @@ class RestDayController extends GetxController {
   PWeekDayData? pWeekDayData;
 
   _getArgumentData() {
+    if (kDebugMode) {
+      print("zzz $arguments");
+    }
     if (arguments != null) {
       if (arguments[0] != null) {
         workoutPlanData = arguments[0];

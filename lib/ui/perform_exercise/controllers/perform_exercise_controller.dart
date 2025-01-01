@@ -18,6 +18,7 @@ import '../../../common/count_down_timer/circular_count_down_timer.dart';
 import '../../../common/dialog/quite_workout/quite_workout.dart';
 import '../../../database/custom_classes/custom_classes.dart';
 import '../../../database/table/home_plan_table.dart';
+import '../../../google_ads/ad_helper.dart';
 import '../../../utils/color.dart';
 
 class PerformExerciseController extends FullLifeCycleController
@@ -52,18 +53,41 @@ class PerformExerciseController extends FullLifeCycleController
   int totalExTime = 0;
   int lastTotalExTime = 0;
 
-   PWeekDayData? weeklyDaysData;
+  PWeekDayData? weeklyDaysData;
 
   InterstitialAd? _interstitialAd;
 
   int getCountShowAd = 0;
   bool isFromCompleted = true;
 
+  void _loadInterstitialAd() {
+    InterstitialAd.load(
+      adUnitId: AdHelper.interstitialAdUnitId,
+      request: const AdRequest(),
+      adLoadCallback: InterstitialAdLoadCallback(
+        onAdLoaded: (ad) {
+          ad.fullScreenContentCallback = FullScreenContentCallback(
+            onAdDismissedFullScreenContent: (ad) {
+              if (isFromCompleted) {
+                _moveToCompetedScreen();
+              } else {
+                _moveToQuite();
+              }
+            },
+          );
+          _interstitialAd = ad;
+        },
+        onAdFailedToLoad: (err) {
+          Debug.printLog('Failed to load an interstitial ad: ${err.message}');
+        },
+      ),
+    );
+  }
 
   @override
   void onInit() {
     addBindingObserver();
-    //_loadInterstitialAd();
+    _loadInterstitialAd();
     _argumentData();
     getPreferenceData();
     super.onInit();
@@ -81,7 +105,6 @@ class PerformExerciseController extends FullLifeCycleController
     totalExTime = lastTotalExTime;
     totalExTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
       totalExTime = totalExTime + 1;
-      Debug.printLog("totalExTime -->> $totalExTime");
     });
   }
 
@@ -157,6 +180,7 @@ class PerformExerciseController extends FullLifeCycleController
 
   countDownTimerFinish() {
     isCompletedCountDown = Constant.boolValueTrue;
+
     update([Constant.idCountDownTimerExercise]);
     startPerformExercise();
   }
@@ -502,6 +526,13 @@ class PerformExerciseController extends FullLifeCycleController
     });
   }
 
+  // onCommonQuestionClick() {
+  //   pauseTimers();
+  //   removeBindingObserver();
+  //   Get.toNamed(AppRoutes.commonQuestions)!.then((value) {
+  //     resumeTimers();
+  //   });
+  // }
 
   onQuiteButtonClick() async {
     var calValue = Constant.secDurationCal * totalExTime;
@@ -513,18 +544,18 @@ class PerformExerciseController extends FullLifeCycleController
         hPlanName: await DBHelper.dbHelper
             .getPlanNameByPlanId(exerciseList[0].planId!),
         hDateTime:
-            (DateFormat(Constant.dateTime24Format).format(DateTime.now())),
+        (DateFormat(Constant.dateTime24Format).format(DateTime.now())),
         hCompletionTime: totalExTime.toString(),
         hBurnKcal: calValue.toString(),
         hTotalEx: exerciseList.length.toString(),
         hKg: (Preference.shared.getInt(Preference.currentWeightInKg) ??
-                Constant.weightKg)
+            Constant.weightKg)
             .toString(),
         hFeet: (Preference.shared.getInt(Preference.currentHeightInFt) ??
-                Constant.heightFt)
+            Constant.heightFt)
             .toString(),
         hInch: (Preference.shared.getInt(Preference.currentHeightInIn) ??
-                Constant.heightIn)
+            Constant.heightIn)
             .toString(),
         hFeelRate: "0",
         hDayName: await DBHelper.dbHelper

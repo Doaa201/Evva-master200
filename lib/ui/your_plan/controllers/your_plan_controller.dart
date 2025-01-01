@@ -38,6 +38,6 @@ class YourPlanController extends GetxController {
 
   onGoButtonAndGoToHomePageClick() {
     Preference.shared.setBool(Preference.isFirstTimeOpenApp, Constant.boolValueFalse);
-    Get.offAllNamed(AppRoutes.home);
+    Get.offAllNamed(AppRoutes.signIn);
   }
 }

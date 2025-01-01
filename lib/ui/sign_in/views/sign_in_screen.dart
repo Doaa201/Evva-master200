@@ -7,9 +7,21 @@ import 'package:women_lose_weight_flutter/utils/sizer_utils.dart';
 
 import '../../../utils/constant.dart';
 
-class SignInScreen extends StatelessWidget {
+class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
 
+  @override
+  State<SignInScreen> createState() => _SignInScreenState();
+}
+
+class _SignInScreenState extends State<SignInScreen> {
+  late AppSizes appSizes;
+
+  @override
+  void initState() {
+    appSizes = AppSizes();
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,7 +58,7 @@ class SignInScreen extends StatelessWidget {
               const Spacer(),
               InkWell(
                 onTap: () {
-                  Get.offAllNamed(AppRoutes.home);  // الانتقال إلى صفحة Home Screen
+                  Get.offAllNamed(AppRoutes.chooseYourPlan);
                 },
                 child: Text(
                   "txtSkip".tr,
@@ -206,7 +218,7 @@ class SignInScreen extends StatelessWidget {
       ),
       child: TextButton(
         onPressed: () {
-          Get.offAllNamed(AppRoutes.chooseYourPlan);
+          Get.offAllNamed(AppRoutes.home);
         },
         style: ButtonStyle(
           shape: WidgetStateProperty.all<RoundedRectangleBorder>(
