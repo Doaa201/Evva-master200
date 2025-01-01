@@ -161,6 +161,8 @@ class AppPages {
       page: () => const MyProfileScreen(),
       binding: MyProfileBinding(),
     ),
+
+
     GetPage(
       name: AppRoutes.daysPlanDetail,
       page: () => DaysPlanDetailScreen(),

@@ -33,27 +33,7 @@ class QuiteWorkout extends StatelessWidget {
                   borderRadius: BorderRadius.circular(5),
                   child: Column(
                     children: [
-                      Stack(
-                        alignment: Alignment.topRight,
-                        children: [
-
-                          Container(
-                            margin: EdgeInsets.all(AppSizes.height_1_8),
-                            child: IconButton(
-                              onPressed: () {
-                                Get.back(result: [true]);
-                              },
-                              padding: EdgeInsets.zero,
-                              icon: Image.asset(
-                                Constant.getAssetIcons() +
-                                    "wp_ic_info_close.webp",
-                                height: AppSizes.height_5,
-                                width: AppSizes.height_5,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+                      
                       Container(
                         margin: EdgeInsets.only(
                             top: AppSizes.height_2_5, bottom: AppSizes.height_5),
