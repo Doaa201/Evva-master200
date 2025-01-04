@@ -17,16 +17,7 @@ class ChooseYourPlanController extends GetxController {
     chooseYourPlanList = [
       ChooseYourPlanData(
           planName: "txtLoseWeightAndKeepFit".tr,
-          planImage: "ic_goal_lose_weight_keep.webp"),
-      // ChooseYourPlanData(
-      //     planName: "txtButtLiftTone".tr,
-      //     planImage: "ic_goal_butt_lift_tone.webp"),
-      // ChooseYourPlanData(
-      //     planName: "txtLoseBellyFat".tr,
-      //     planImage: "ic_goal_lose_belly_fat.png"),
-      // ChooseYourPlanData(
-      //     planName: "txtBuildMuscleStrength".tr,
-      //     planImage: "ic_goal_build_muscle_strength.webp"),
+          planImage: "assets/images/fitness7.jpg"),
     ];
   }
 

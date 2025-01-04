@@ -79,17 +79,15 @@ class Constant {
   static const statusSyncPending = 1;
   static const statusSyncDeleted = 2;
 
-  static const  googlePlayIdentifier =  "Add your googlePlayIdentifier here";
-  static const  appStoreIdentifier  = "Add your appStoreIdentifier here";
 
   static String getPrivacyPolicyURL() {
     return "Add your privacy policy link here";
   }
 
-  static const String shareLink = "Add your app url here";
+  static const String shareLink = " ";
 
-  static const String monthlySubscriptionId = "Add your monthly subscription id here which should be same for both android and iOS";
-  static const String yearlySubscriptionId = "Add your yearly subscription id here which should be same for both android and iOS";
+  static const String monthlySubscriptionId = " ";
+  static const String yearlySubscriptionId = " ";
 
 
 
