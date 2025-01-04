@@ -142,12 +142,12 @@ class Utils {
 
   static getSelectedPlanImage(planIndex) {
     if (planIndex == 0) {
-      return Constant.getAssetImage() + "lose_weight_keep.webp";
+      return Constant.getAssetImage() + "fitness22.jpg";
 
 
 
     } else {
-      return Constant.getAssetImage() + "lose_weight_keep.webp";
+      return Constant.getAssetImage() + "fitness22.jpg";
     }
   }
 
