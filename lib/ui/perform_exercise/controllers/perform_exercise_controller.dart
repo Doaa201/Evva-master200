@@ -37,7 +37,7 @@ class PerformExerciseController extends FullLifeCycleController
   double buttonProgressValue = 0;
   double buttonProgressTime = 0;
 
-  int exTime = 0;
+  int  exTime = 0;
   int stopExTime = 0;
 
   dynamic arguments = Get.arguments;
