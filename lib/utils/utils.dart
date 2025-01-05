@@ -254,7 +254,7 @@ class Utils {
 
   static scheduledNotification(
       tz.TZDateTime scheduledDate, int notificationId) async {
-    var titleText = "Lose Weight For Women";
+    var titleText = "Eva Fitness";
     var msg =
         "Your body needs energy! You haven't exercised in ${intl.DateFormat('EEEE').format(DateTime.now())}!";
     Debug.printLog("scheduledNotification Id --->> $notificationId");
