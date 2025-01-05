@@ -117,8 +117,8 @@ class ExerciseListScreen extends StatelessWidget {
               decoration: BoxDecoration(
                 color: AppColor.transparent,
                 image: DecorationImage(
-                  image: AssetImage(Constant.getAssetImage() +
-                      _exerciseListController.getPlanImage()),
+                  image: AssetImage(Utils.getSelectedPlanImage(
+                      logic.currentPlanIndex)),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -185,7 +185,7 @@ class ExerciseListScreen extends StatelessWidget {
                     Utils.getMultiLanguageString(logic.getPlanName()),
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      color: AppColor.white,
+                      color: AppColor.txtColor333,
                       fontWeight: FontWeight.w700,
                       fontSize: AppFontSize.size_17,
                     ),
@@ -199,8 +199,8 @@ class ExerciseListScreen extends StatelessWidget {
                             logic.getPlanDescription()),
                         textAlign: TextAlign.start,
                         style: TextStyle(
-                          color: AppColor.white,
-                          fontSize: AppFontSize.size_10_5,
+                          color: AppColor.txtColor333,
+                          fontSize: AppFontSize.size_13,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
@@ -215,7 +215,7 @@ class ExerciseListScreen extends StatelessWidget {
                               bottom: AppSizes.height_4),
                           padding: EdgeInsets.symmetric(
                               horizontal: AppSizes.width_3,
-                              vertical: AppSizes.height_1_2),
+                              vertical: AppSizes.height_4),
                           alignment: Alignment.center,
                         ),
                       ),

@@ -793,24 +793,7 @@ class CompletedScreen extends StatelessWidget {
               );
             },
           ),
-          Container(
-            margin: EdgeInsets.only(top: AppSizes.height_1),
-            alignment: Alignment.centerRight,
-            child: InkWell(
-              onTap: () {
-                Utils().sendFeedback();
-              },
-              child: Text(
-                "txtFeedback".tr.toUpperCase(),
-                textAlign: TextAlign.right,
-                style: TextStyle(
-                  color: AppColor.primary,
-                  fontSize: AppFontSize.size_12_5,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-            ),
-          ),
+
         ],
       ),
     );

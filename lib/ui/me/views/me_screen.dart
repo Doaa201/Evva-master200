@@ -1,14 +1,11 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:women_lose_weight_flutter/localization/localizations_delegate.dart';
 import 'package:women_lose_weight_flutter/routes/app_routes.dart';
 import 'package:women_lose_weight_flutter/ui/me/controllers/me_controller.dart';
 import 'package:women_lose_weight_flutter/utils/constant.dart';
 import 'package:women_lose_weight_flutter/utils/sizer_utils.dart';
-import 'package:women_lose_weight_flutter/utils/utils.dart';
 import '../../../utils/color.dart';
-import 'package:women_lose_weight_flutter/ui/about/views/about_screen.dart';
 
 class MeScreen extends StatelessWidget {
   MeScreen({super.key});
@@ -84,7 +81,7 @@ class MeScreen extends StatelessWidget {
             Icons.edit_outlined,
             Constant.boolValueFalse,
             onTap: () {
-              Utils().sendFeedback();
+
             },
           ),
           _spaceWidget(h: AppSizes.height_3),

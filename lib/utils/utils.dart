@@ -527,19 +527,7 @@ class Utils {
     return second * Constant.secDurationCal;
   }
 
-  void sendFeedback() {
-    final Uri emailLaunchUri = Uri(
-      scheme: 'mailto',
-      path: Constant.emailPath,
-      query: encodeQueryParameters(<String, String>{
-        'subject': Platform.isAndroid
-            ? "txtLoseWeightForWomenFeedbackAndroid".tr
-            : "txtLoseWeightForWomenFeedbackiOS".tr,
-        'body': " "
-      }),
-    );
-    launchUrl(emailLaunchUri);
-  }
+
 
   String? encodeQueryParameters(Map<String, String> params) {
     return params.entries
