@@ -147,7 +147,7 @@ class YourPlanScreen extends StatelessWidget {
                         _yourPlanController.selectedPlanIndex),
                     textAlign: TextAlign.start,
                     style: TextStyle(
-                      color: AppColor.white,
+                      color: AppColor.txtColor333,
                       fontSize: AppFontSize.size_15,
                       fontWeight: FontWeight.w700,
                     ),
@@ -167,7 +167,7 @@ class YourPlanScreen extends StatelessWidget {
                         child: LinearProgressIndicator(
                           value: logic.pbDay,
                           minHeight: AppSizes.height_1_3,
-                          backgroundColor: AppColor.white,
+                          backgroundColor: AppColor.colorWhatsYourGoal,
                           color: AppColor.primary,
                         ),
                       ),
@@ -181,7 +181,7 @@ class YourPlanScreen extends StatelessWidget {
                       "${logic.txtDayLeft}\t${"txtDaysLeft".tr}",
                       textAlign: TextAlign.start,
                       style: TextStyle(
-                        color: AppColor.white,
+                        color: AppColor.txtColor333,
                         fontSize: AppFontSize.size_12,
                         fontWeight: FontWeight.w400,
                       ),
