@@ -1,7 +1,7 @@
 final Map<String, String> enUS = {
 
   /// App Strings
-  'txtAppName': "Lose Weight For Women",
+  'txtAppName': "Eva Fitness",
   'txtSkip': "Skip",
   'txtChooseYourPlan': "Choose\nYour Plan",
   'txtLoseWeightWithThePlan': "Lose weight with the plan that suits you best",
@@ -233,9 +233,9 @@ final Map<String, String> enUS = {
   'txtVeryUnderweight': "Very Underweight",
   'txtHealthyWeight': "Healthy Weight",
   'txtObese': "Obese",
-  'txtShareDesc': "I have just used Lose Weight for Women. It's Challenging and awesome.\n\n You can keep keep yor fitness journal and get the best results at home.\n\n Download the app here: ",
-  'txtLoseWeightForWomenFeedbackAndroid': "Lose Weight For Women Feedback - Android",
-  'txtLoseWeightForWomenFeedbackiOS': "Lose Weight For Women Feedback - iOS",
+  'txtShareDesc': "I have just used Eva Fitness. It's Challenging and awesome.\n\n You can keep keep yor fitness journal and get the best results at home.\n\n Download the app here: ",
+  'txtEvaFitnessFeedbackAndroid': "Eva Fitness Feedback - Android",
+  'txtEvaFitnessFeedbackiOS': "Eva Fitness Feedback - iOS",
   'txtTapToInputHeight': "Tap here to input your height",
   'txtLanguageOptions': "Language Options",
   'txtWaterOffMessage': "Water is the fuel of muscles.",

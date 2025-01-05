@@ -4,7 +4,7 @@ A new Flutter project.
 
 ## Getting Started
 
-Product :- Lose Weight for women
+Product :- Eva Fitness
 
 Flutter version :- 3.7.12
 Code Structure :- GetX

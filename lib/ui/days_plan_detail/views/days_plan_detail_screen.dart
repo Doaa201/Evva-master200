@@ -117,7 +117,7 @@ class DaysPlanDetailScreen extends StatelessWidget {
                     maxLines: 1,
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      color: AppColor.white,
+                      color: AppColor.txtColor333,
                       fontWeight: FontWeight.w700,
                       fontSize: AppFontSize.size_17,
                     ),
@@ -132,7 +132,7 @@ class DaysPlanDetailScreen extends StatelessWidget {
                       child: LinearProgressIndicator(
                         value: logic.pbDay,
                         minHeight: AppSizes.height_1,
-                        backgroundColor: AppColor.white,
+                        backgroundColor: AppColor.colorWhatsYourGoal,
                         color: AppColor.primary,
                       ),
                     ),
@@ -143,7 +143,7 @@ class DaysPlanDetailScreen extends StatelessWidget {
                       "${logic.txtDayLeft}\t${"txtDaysLeft".tr}",
                       textAlign: TextAlign.start,
                       style: TextStyle(
-                        color: AppColor.white,
+                        color: AppColor.txtColor333,
                         fontSize: AppFontSize.size_12,
                         fontWeight: FontWeight.w400,
                       ),
